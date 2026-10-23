@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0809">
+  <meta name="description" content="A few things I love exploring: electronics, chemistry, art, AI and machine learning, web development, networking, data science, design, and food preparation.">
+  <title>Interests — Portfolio</title>
+  <style>
+:root {
+  color-scheme: dark;
+  --bg: #090d12;
+  --panel: #10161d;
+  --panel-hover: #131c25;
+  --text: #eef2f4;
+  --muted: #9ba7b1;
+  --dim: #64717c;
+  --line: rgba(184, 203, 216, .14);
+  --mint: #a5f1cf;
+  --blue: #8cccf2;
+  --lavender: #c4b9ff;
+  --peach: #ffbd9c;
+  --yellow: #f2d38a;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 2rem; }
+body { margin: 0; min-width: 320px; background: var(--bg); }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .17; z-index: -1; background-image: radial-gradient(rgba(205,222,232,.4) .55px, transparent .55px); background-size: 19px 19px; mask-image: linear-gradient(to bottom, transparent, black 30%, black 75%, transparent); }
+a { color: inherit; }
+.site-shell { max-width: 1440px; margin: auto; padding: 0 7.1%; }
+.topbar { height: 82px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
+.wordmark { display: inline-flex; align-items: center; gap: 11px; color: #c0c9ce; text-decoration: none; font-size: 10px; letter-spacing: .16em; font-weight: 700; }
+.wordmark-mark { width: 27px; height: 27px; display: grid; place-items: center; border: 1px solid rgba(165,241,207,.45); border-radius: 7px; color: var(--mint); font-family: Georgia, serif; font-size: 16px; letter-spacing: 0; }
+.topbar nav { display: flex; gap: 35px; margin-left: 6%; }
+.topbar nav a { color: var(--muted); text-decoration: none; font-size: 12px; transition: color .2s; }
+.topbar nav a:hover, .topbar nav a[aria-current="page"] { color: var(--text); }
+.topbar nav a[aria-current="page"] { position: relative; }
+.topbar nav a[aria-current="page"]::after { content: ""; height: 2px; background: var(--mint); position: absolute; bottom: -32px; left: 0; right: 0; }
+.availability { color: #9ca9af; font-size: 9px; letter-spacing: .15em; display: flex; align-items: center; gap: 9px; }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--mint); box-shadow: 0 0 12px rgba(165,241,207,.8); }
+.intro { min-height: 535px; display: grid; grid-template-columns: 1fr .84fr; align-items: center; position: relative; padding: 53px 0 66px; }
+.intro-copy { max-width: 600px; position: relative; z-index: 1; }
+.eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 25px; color: #a6b2ba; font: 600 9px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .17em; }
+.eyebrow-line { width: 22px; height: 1px; background: var(--mint); display: inline-block; }
+.mono { color: #788690; margin-left: 7px; }
+h1 { margin: 0; font-size: clamp(54px, 7.3vw, 99px); line-height: .98; letter-spacing: -.075em; font-weight: 580; }
+h1 em { color: var(--mint); font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: -.065em; }
+.intro-text { max-width: 435px; margin: 25px 0 25px; color: #a4afb7; font-size: 14px; line-height: 1.85; }
+.text-link { text-decoration: none; display: inline-flex; gap: 12px; align-items: center; color: #dfe7e9; font-size: 12px; font-weight: 600; border-bottom: 1px solid rgba(165,241,207,.5); padding-bottom: 8px; transition: gap .2s, color .2s; }
+.text-link:hover { gap: 18px; color: var(--mint); }
+.orbit-art { width: min(100%, 410px); aspect-ratio: 1; margin: 0 auto; position: relative; display: grid; place-items: center; isolation: isolate; }
+.orbit-art::before { content: ""; position: absolute; inset: 12%; border-radius: 50%; background: radial-gradient(circle, rgba(97,152,153,.16), transparent 65%); filter: blur(15px); z-index: -1; }
+.orbit { position: absolute; border: 1px solid rgba(168,197,207,.2); border-radius: 50%; transform: rotate(-31deg); }
+.orbit-one { width: 77%; height: 39%; }
+.orbit-two { width: 92%; height: 53%; transform: rotate(48deg); border-color: rgba(165,241,207,.24); }
+.orbit-three { width: 67%; height: 67%; transform: rotate(15deg); border-style: dashed; border-color: rgba(168,197,207,.13); }
+.orbit-core { width: 94px; height: 94px; border-radius: 50%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: radial-gradient(circle at 35% 30%, #28443f, #111c1f 72%); border: 1px solid rgba(165,241,207,.4); box-shadow: 0 0 42px rgba(132,228,192,.1), inset 0 0 30px rgba(132,228,192,.08); color: var(--mint); font: 600 9px/1.4 ui-monospace, monospace; letter-spacing: .14em; text-align: center; }
+.core-cross { font-size: 17px; margin-top: 4px; }
+.orbit-node { width: 9px; height: 9px; border-radius: 50%; position: absolute; box-shadow: 0 0 18px currentColor; }
+.node-one { color: var(--blue); background: var(--blue); left: 19%; top: 36%; }
+.node-two { color: var(--peach); background: var(--peach); right: 17%; top: 61%; width: 7px; height: 7px; }
+.node-three { color: var(--lavender); background: var(--lavender); top: 16%; right: 37%; width: 5px; height: 5px; }
+.orbit-label { position: absolute; color: #75838a; font: 9px ui-monospace, monospace; letter-spacing: .15em; }
+.label-top { top: 8%; right: 8%; }.label-bottom { bottom: 10%; left: 1%; }
+.intro-index { position: absolute; bottom: 24px; left: 0; right: 0; border-top: 1px solid var(--line); padding-top: 12px; display: flex; justify-content: space-between; color: #73808a; font: 9px ui-monospace, monospace; letter-spacing: .14em; }
+.interests-section { padding: 64px 0 76px; border-top: 1px solid var(--line); }
+.section-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 33px; }
+.section-heading .eyebrow { margin-bottom: 15px; }
+h2 { font-size: clamp(31px, 4.4vw, 52px); line-height: 1; letter-spacing: -.06em; font-weight: 540; margin: 0; }
+.accent { color: var(--mint); }
+.section-note { color: #87949d; font-size: 11px; line-height: 1.75; margin: 0 4px 1px 20px; }
+.filters { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 24px; }
+.filter-button { border: 1px solid var(--line); background: transparent; color: #9ba7af; border-radius: 5px; padding: 9px 12px; font-family: inherit; font-size: 10px; font-weight: 500; line-height: 1.2; font-size: 10px; cursor: pointer; transition: border-color .2s, background .2s, color .2s; }
+.filter-button span { font: 9px ui-monospace, monospace; margin-left: 11px; color: #6f7c83; }
+.filter-button:hover { border-color: rgba(165,241,207,.45); color: var(--text); }
+.filter-button.is-active { color: #dbf5e9; background: rgba(165,241,207,.08); border-color: rgba(165,241,207,.43); }
+.filter-button.is-active span { color: var(--mint); }
+.interest-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 15px; align-items: stretch; }
+.interest-card { min-width: 0; overflow: hidden; position: relative; background: linear-gradient(145deg, rgba(18,25,32,.96), rgba(13,19,25,.96)); border: 1px solid var(--line); border-radius: 8px; transition: transform .28s ease, border-color .28s ease, background .28s ease; animation: card-in .5s both; animation-delay: var(--delay); }
+.interest-card:hover { transform: translateY(-4px); border-color: rgba(165,241,207,.32); background: linear-gradient(145deg, #151f27, #10171e); }
+.interest-card[hidden] { display: none; }
+.card-top { height: 52px; display: flex; justify-content: space-between; align-items: center; padding: 0 19px; position: relative; z-index: 2; }
+.card-number { color: #d7e0e4; font: 10px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .09em; }
+.card-number i { font-style: normal; color: #67747e; margin-left: 7px; font-size: 8px; }
+.card-icon { width: 29px; height: 29px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 6px; color: var(--mint); }
+.card-icon svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+.card-astro .card-icon { color: var(--lavender); }.card-solder .card-icon { color: var(--peach); }.card-chemistry .card-icon { color: var(--blue); }.card-art-interest .card-icon { color: var(--yellow); }
+.card-art { height: 125px; position: relative; overflow: hidden; border-top: 1px solid rgba(184,203,216,.08); border-bottom: 1px solid rgba(184,203,216,.08); background: radial-gradient(ellipse at 50% 100%, rgba(122,178,157,.1), transparent 68%), #0c1218; }
+.circuit-art { background-image: linear-gradient(rgba(75,135,120,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(75,135,120,.035) 1px, transparent 1px), radial-gradient(ellipse at 50% 100%, rgba(122,178,157,.1), transparent 68%); background-size: 18px 18px, 18px 18px, auto; }
+.chip { position: absolute; width: 43px; height: 37px; left: 50%; top: 50%; transform: translate(-50%,-50%); background: linear-gradient(135deg,#243c37,#121f20); border: 1px solid rgba(165,241,207,.62); border-radius: 4px; box-shadow: 0 0 27px rgba(165,241,207,.12); }
+.chip::after { content: ""; position: absolute; inset: 7px; border: 1px solid rgba(165,241,207,.25); border-radius: 2px; }
+.trace { position: absolute; height: 1px; width: 28%; background: rgba(165,241,207,.55); left: 18%; top: 37%; }.trace::after { content: ""; position: absolute; width: 4px; height: 4px; top: -2px; right: 0; border-radius: 50%; background: var(--mint); box-shadow: 0 0 7px var(--mint); }.trace-a { top: 37%; left: 19%; width: 28%; }.trace-b { top: 64%; left: 53%; width: 28%; }.trace-c { top: 26%; left: 52%; width: 20%; transform: rotate(-25deg); }.trace-d { top: 77%; left: 27%; width: 22%; transform: rotate(-20deg); }
+.astro-art { background: radial-gradient(ellipse at 56% 58%, rgba(124,108,185,.16), transparent 57%), #0b1018; }
+.planet { width: 54px; height: 54px; position: absolute; top: 34px; left: 50%; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(circle at 32% 30%, #c3b7ef, #7772aa 43%, #302d52 82%); box-shadow: inset -11px -6px 18px rgba(8,10,19,.55), 0 0 25px rgba(168,154,237,.16); }
+.planet-ring { position: absolute; width: 112px; height: 35px; border: 1px solid rgba(207,194,255,.64); border-left-color: rgba(207,194,255,.15); border-right-color: rgba(207,194,255,.16); border-radius: 50%; left: 50%; top: 44px; transform: translateX(-50%) rotate(-14deg); }
+.star { position: absolute; color: #cbc1f4; font-size: 10px; }.s1 { left: 20%; top: 26%; }.s2 { left: 31%; top: 67%; font-size: 20px; }.s3 { right: 22%; top: 25%; }.s4 { right: 34%; top: 76%; font-size: 17px; }.s5 { right: 14%; bottom: 18%; font-size: 7px; }
+.solder-art { background: radial-gradient(ellipse at center, rgba(173,114,82,.15), transparent 60%), #0c1116; }
+.pad { position: absolute; width: 25px; height: 25px; border: 1px solid rgba(255,189,156,.66); border-radius: 50%; background: rgba(164,103,73,.16); box-shadow: inset 0 0 0 6px rgba(255,189,156,.035); }.p1 { left: 22%; top: 22%; }.p2 { left: 38%; top: 57%; }.p3 { right: 24%; top: 18%; }.p4 { right: 37%; bottom: 10%; width: 15px; height: 15px; }
+.solder-line { position: absolute; height: 1px; background: var(--peach); width: 45%; left: 27%; top: 51%; transform: rotate(-28deg); box-shadow: 0 0 10px rgba(255,189,156,.6); }.solder-tip { position: absolute; width: 9px; height: 9px; top: 36%; right: 29%; border: 1px solid #ffe0c8; border-radius: 50%; box-shadow: 0 0 14px var(--peach); }.solder-glint { position: absolute; color: #ffe0c8; left: 49%; top: 31%; font-size: 16px; }
+.chemistry-art { background: radial-gradient(ellipse at 50% 87%, rgba(90,151,177,.17), transparent 64%), #0b1118; }.flask { position: absolute; width: 37px; height: 49px; left: 50%; top: 24px; transform: translateX(-50%); border: 1px solid rgba(140,204,242,.75); border-top: 0; clip-path: polygon(37% 0,63% 0,63% 32%,100% 92%,95% 100%,5% 100%,0 92%,37% 32%); background: linear-gradient(to top, rgba(90,164,193,.4) 0 43%, transparent 43%); filter: drop-shadow(0 0 12px rgba(140,204,242,.2)); }
+.flask::before { content: ""; position: absolute; width: 11px; height: 15px; top: -1px; left: 12px; border: 1px solid rgba(140,204,242,.75); border-bottom: 0; }
+.bubble { position: absolute; border: 1px solid rgba(140,204,242,.72); border-radius: 50%; }.b1 { width: 7px; height: 7px; left: 44%; top: 51%; }.b2 { width: 4px; height: 4px; left: 53%; top: 63%; }.b3 { width: 6px; height: 6px; right: 34%; top: 48%; }.chem-star { position: absolute; right: 28%; top: 23%; color: var(--blue); font-size: 15px; }
+.painting-art { background: radial-gradient(ellipse at center, rgba(196,185,255,.1), transparent 65%), #0d1117; }.paint { position: absolute; border-radius: 50%; filter: blur(1px); opacity: .86; }.p-a { width: 75px; height: 24px; left: 20%; top: 33%; background: #c4b9ff; transform: rotate(-28deg); }.p-b { width: 63px; height: 28px; left: 36%; top: 51%; background: #e5a992; transform: rotate(20deg); }.p-c { width: 70px; height: 22px; right: 19%; top: 30%; background: #8cccf2; transform: rotate(24deg); }.p-d { width: 50px; height: 27px; right: 28%; bottom: 10%; background: #ddca84; transform: rotate(-15deg); }.p-e { width: 45px; height: 18px; left: 17%; bottom: 12%; background: #7ccab2; transform: rotate(18deg); }.paint-mark { position: absolute; right: 9%; top: 43%; color: #e9e3d1; font: 8px/1.4 ui-monospace, monospace; letter-spacing: .15em; transform: rotate(-8deg); }
+.card-content { padding: 17px 19px 19px; }.card-kicker { color: #7c8992; font: 9px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .1em; margin: 0 0 8px; }
+h3 { margin: 0 0 9px; font-size: 21px; letter-spacing: -.045em; font-weight: 550; }
+.card-description { color: #a2adb5; font-size: 11px; line-height: 1.75; margin: 0; min-height: 59px; }
+.card-more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .3s ease; }.card-more p { overflow: hidden; margin: 0; color: #8eaaa1; font-size: 11px; line-height: 1.7; }.interest-card.is-open .card-more { grid-template-rows: 1fr; }.interest-card.is-open .card-more p { padding-top: 10px; }
+.note-button { border: 0; border-top: 1px solid rgba(184,203,216,.1); padding: 13px 0 0; margin-top: 15px; width: 100%; background: none; text-align: left; display: flex; justify-content: space-between; color: #d0dadd; font-family: inherit; font-size: 10px; font-weight: 600; cursor: pointer; transition: color .2s; }.note-button:hover,.note-button:focus-visible { color: var(--mint); }.note-button span { color: var(--mint); transition: transform .2s; }.interest-card.is-open .note-button span { transform: rotate(45deg); }
+.empty-state { color: var(--muted); font-size: 13px; padding: 30px 0; }
+.closing { display: flex; align-items: center; gap: 17px; padding: 23px 0 27px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }.closing-mark { color: var(--mint); font-size: 25px; }.closing .eyebrow { margin: 0 0 7px; font-size: 8px; }.closing h2 { font-size: 25px; }.back-top { margin-left: auto; text-decoration: none; color: #aab6bb; font-size: 10px; display: flex; gap: 17px; align-items: center; transition: color .2s; }.back-top:hover { color: var(--mint); }.back-top span { color: var(--mint); font-size: 15px; }
+footer { min-height: 75px; display: flex; align-items: center; justify-content: space-between; color: #66737b; font: 8px ui-monospace, monospace; letter-spacing: .13em; }.footer-mark { font-size: 8px; }.footer-mark .wordmark-mark { width: 23px; height: 23px; font-size: 13px; }
+:focus-visible { outline: 2px solid var(--mint); outline-offset: 3px; border-radius: 3px; }
+@keyframes card-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@media (min-width: 1250px) { .interest-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 17px; }.card-art { height: 141px; }.card-content { padding: 19px 21px 21px; }.card-description { font-size: 12px; } }
+@media (max-width: 850px) { .site-shell { padding: 0 5%; }.intro { min-height: 460px; grid-template-columns: 1.12fr .88fr; }.orbit-art { width: 100%; }.interest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .site-shell { padding: 0 20px; }.topbar { height: 67px; }.wordmark { font-size: 8px; gap: 8px; }.wordmark-mark { width: 24px; height: 24px; }.topbar nav { gap: 16px; margin: 0; }.topbar nav a { font-size: 10px; }.topbar nav a[aria-current="page"]::after { bottom: -26px; }.availability { display: none; }.intro { min-height: auto; grid-template-columns: 1fr; padding: 62px 0 70px; }.intro-copy { max-width: 520px; }.eyebrow { font-size: 8px; margin-bottom: 21px; }.intro-text { font-size: 13px; max-width: 390px; }.orbit-art { width: min(78vw, 320px); margin: 30px auto 10px; }.intro-index { bottom: 22px; }.interests-section { padding: 53px 0 55px; }.section-heading { align-items: start; flex-direction: column; gap: 15px; margin-bottom: 22px; }.section-note { margin: 0; }.filters { gap: 6px; margin-bottom: 17px; }.filter-button { padding: 8px 9px; font-size: 9px; }.filter-button span { margin-left: 6px; }.interest-grid { grid-template-columns: 1fr; gap: 11px; }.card-art { height: 130px; }.card-description { min-height: 0; }.card-content { padding: 16px 17px 17px; }.closing { gap: 12px; }.closing h2 { font-size: 22px; }.back-top { gap: 7px; font-size: 9px; }footer { min-height: 68px; font-size: 7px; }.footer-mark { font-size: 7px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+
+/* Added interests: visual studies built from CSS, so the page stays self-contained. */
+.card-ai .card-icon { color: var(--mint); }.card-web .card-icon { color: var(--blue); }.card-network .card-icon { color: var(--peach); }.card-data .card-icon { color: var(--lavender); }.card-design .card-icon { color: var(--yellow); }.card-food .card-icon { color: #edaa87; }
+.ai-art { background: radial-gradient(ellipse at center, rgba(115,197,157,.12), transparent 65%), #0b1116; }.ai-node { position: absolute; width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--mint); background: #12231e; box-shadow: 0 0 9px rgba(165,241,207,.45); }.n1 { left: 22%; top: 28%; }.n2 { left: 37%; top: 61%; }.n3 { left: 50%; top: 35%; width: 12px; height: 12px; }.n4 { right: 31%; top: 66%; }.n5 { right: 19%; top: 29%; }.n6 { right: 45%; bottom: 12%; width: 5px; height: 5px; }.ai-link { height: 1px; position: absolute; background: rgba(165,241,207,.36); transform-origin: left; }.l1 { width: 19%; left: 24%; top: 34%; transform: rotate(62deg); }.l2 { width: 19%; left: 39%; top: 63%; transform: rotate(-57deg); }.l3 { width: 19%; left: 53%; top: 40%; transform: rotate(58deg); }.l4 { width: 17%; right: 19%; top: 35%; transform: rotate(130deg); }.l5 { width: 22%; left: 43%; bottom: 16%; transform: rotate(-45deg); }.ai-label { position: absolute; right: 7%; bottom: 12%; color: #81988e; font: 8px ui-monospace, monospace; letter-spacing: .13em; }
+.web-art { background: radial-gradient(ellipse at center, rgba(98,157,194,.13), transparent 63%), #0b1117; }.web-window { position: absolute; width: 52%; height: 76px; left: 24%; top: 24px; border: 1px solid rgba(140,204,242,.55); border-radius: 5px; background: rgba(14,23,31,.8); box-shadow: 0 7px 25px rgba(65,147,190,.08); padding: 8px; }.web-window i { display: inline-block; width: 4px; height: 4px; margin-right: 3px; border-radius: 50%; background: rgba(140,204,242,.65); }.web-window b { display: block; color: var(--blue); margin: 12px 0 4px; font: 600 12px ui-monospace, monospace; text-align: center; }.web-window small { display: block; color: #83949d; font: 7px ui-monospace, monospace; text-align: center; }.web-cursor { position: absolute; right: 25%; bottom: 21%; color: #e7f8ff; font-size: 22px; text-shadow: 0 0 9px var(--blue); }
+.network-art { background: radial-gradient(ellipse at center, rgba(255,189,156,.12), transparent 62%), #0c1116; }.net-ring { position: absolute; border: 1px solid rgba(255,189,156,.22); border-radius: 50%; left: 50%; top: 50%; transform: translate(-50%,-50%); }.r1 { width: 74px; height: 43px; }.r2 { width: 122px; height: 68px; transform: translate(-50%,-50%) rotate(45deg); }.r3 { width: 170px; height: 90px; transform: translate(-50%,-50%) rotate(-34deg); }.net-dot { position: absolute; width: 6px; height: 6px; background: var(--peach); border-radius: 50%; box-shadow: 0 0 9px rgba(255,189,156,.8); }.d1 { left: 24%; top: 35%; }.d2 { right: 25%; top: 27%; }.d3 { right: 31%; bottom: 19%; }.d4 { left: 37%; bottom: 14%; width: 4px; height: 4px; }.net-hub { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 34px; height: 34px; border: 1px solid rgba(255,189,156,.75); border-radius: 50%; display: grid; place-items: center; background: #211a19; color: #ffd3bd; font: 7px ui-monospace, monospace; letter-spacing: .08em; }
+.data-art { background: radial-gradient(ellipse at bottom, rgba(196,185,255,.12), transparent 65%), #0c1017; }.data-bars { position: absolute; bottom: 17px; left: 20%; right: 17%; height: 61px; display: flex; gap: 5px; align-items: end; border-bottom: 1px solid rgba(196,185,255,.3); }.data-bars i { flex: 1; background: linear-gradient(to top, rgba(151,133,217,.48), rgba(196,185,255,.1)); border-top: 1px solid var(--lavender); border-radius: 2px 2px 0 0; }.data-bars i:nth-child(1) { height: 30%; }.data-bars i:nth-child(2) { height: 54%; }.data-bars i:nth-child(3) { height: 39%; }.data-bars i:nth-child(4) { height: 68%; }.data-bars i:nth-child(5) { height: 49%; }.data-bars i:nth-child(6) { height: 76%; }.data-bars i:nth-child(7) { height: 59%; }.data-bars i:nth-child(8) { height: 94%; }.data-line { position: absolute; height: 1px; width: 56%; top: 43%; left: 24%; transform: rotate(-13deg); background: rgba(236,228,255,.65); }.data-point { width: 5px; height: 5px; border-radius: 50%; background: #e6deff; position: absolute; box-shadow: 0 0 7px var(--lavender); }.dp1 { left: 24%; top: 53%; }.dp2 { left: 42%; top: 47%; }.dp3 { left: 58%; top: 39%; }.dp4 { right: 22%; top: 31%; }
+.design-art { background: radial-gradient(ellipse at center, rgba(242,211,138,.1), transparent 64%), #0e1116; }.design-block { position: absolute; border: 1px solid rgba(242,211,138,.55); }.b1 { left: 21%; top: 25%; width: 34px; height: 34px; }.b2 { left: 40%; top: 25%; width: 67px; height: 18px; background: rgba(196,185,255,.14); border-color: rgba(196,185,255,.65); }.b3 { left: 21%; top: 54%; width: 54px; height: 20px; background: rgba(140,204,242,.12); border-color: rgba(140,204,242,.6); }.b4 { left: 51%; top: 52%; width: 42px; height: 42px; border-radius: 50%; border-color: rgba(255,189,156,.72); }.b5 { right: 17%; top: 36%; width: 18px; height: 43px; background: rgba(165,241,207,.13); border-color: rgba(165,241,207,.62); }.design-cross { position: absolute; right: 25%; bottom: 12%; color: var(--yellow); font-size: 15px; }.design-circle { position: absolute; left: 31%; top: 42%; width: 6px; height: 6px; border-radius: 50%; background: #f2d38a; box-shadow: 0 0 9px var(--yellow); }
+.food-art { background: radial-gradient(ellipse at center, rgba(235,161,116,.12), transparent 65%), #11110f; }.plate { width: 94px; height: 94px; border-radius: 50%; border: 1px solid rgba(240,218,191,.7); background: radial-gradient(circle, rgba(205,120,77,.22), rgba(239,224,201,.06) 60%, rgba(236,218,192,.1) 61%, transparent 64%); position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); box-shadow: 0 0 20px rgba(236,218,192,.07); }.plate-inner { position: absolute; inset: 12px; border: 1px solid rgba(240,218,191,.18); border-radius: 50%; }.food-leaf { position: absolute; width: 20px; height: 9px; border-radius: 100% 0 100% 0; background: #8eb17c; }.leaf1 { left: 33px; top: 35px; transform: rotate(-23deg); }.leaf2 { left: 45px; top: 43px; transform: rotate(34deg); background: #accb86; }.food-dot { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: #de9768; }.fd1 { left: 35px; top: 48px; }.fd2 { left: 55px; top: 31px; width: 4px; height: 4px; }.fd3 { left: 58px; top: 53px; width: 5px; height: 5px; background: #e8c36c; }.fd4 { left: 29px; top: 41px; width: 4px; height: 4px; background: #e8c36c; }.food-garnish { position: absolute; color: #a9c78a; font-size: 10px; left: 48px; top: 26px; }.food-steam { position: absolute; height: 18px; width: 8px; top: 17px; border-left: 1px solid rgba(240,218,191,.36); border-radius: 50%; }.st1 { left: 47%; transform: rotate(13deg); }.st2 { left: 52%; top: 12px; transform: rotate(-13deg); }
+
+/* CSS illustrations for the added interests */
+.card-ai .card-icon { color: var(--mint); }.card-web .card-icon { color: var(--blue); }.card-network .card-icon { color: var(--peach); }.card-data .card-icon { color: var(--lavender); }.card-design .card-icon { color: var(--yellow); }.card-food .card-icon { color: #edaa87; }
+.ai-art { background: radial-gradient(ellipse at center, rgba(115,197,157,.12), transparent 65%), #0b1116; }.ai-node { position:absolute; width:8px; height:8px; border-radius:50%; border:1px solid var(--mint); background:#12231e; box-shadow:0 0 9px rgba(165,241,207,.45); }.n1 {left:22%;top:28%}.n2 {left:37%;top:61%}.n3 {left:50%;top:35%;width:12px;height:12px}.n4 {right:31%;top:66%}.n5 {right:19%;top:29%}.n6 {right:45%;bottom:12%;width:5px;height:5px}.ai-link {height:1px;position:absolute;background:rgba(165,241,207,.36);transform-origin:left}.l1 {width:19%;left:24%;top:34%;transform:rotate(62deg)}.l2 {width:19%;left:39%;top:63%;transform:rotate(-57deg)}.l3 {width:19%;left:53%;top:40%;transform:rotate(58deg)}.l4 {width:17%;right:19%;top:35%;transform:rotate(130deg)}.l5 {width:22%;left:43%;bottom:16%;transform:rotate(-45deg)}.ai-label {position:absolute;right:7%;bottom:12%;color:#81988e;font:8px ui-monospace,monospace;letter-spacing:.13em}
+.web-art {background:radial-gradient(ellipse at center,rgba(98,157,194,.13),transparent 63%),#0b1117}.web-window {position:absolute;width:52%;height:76px;left:24%;top:24px;border:1px solid rgba(140,204,242,.55);border-radius:5px;background:rgba(14,23,31,.8);padding:8px}.web-window i {display:inline-block;width:4px;height:4px;margin-right:3px;border-radius:50%;background:rgba(140,204,242,.65)}.web-window b {display:block;color:var(--blue);margin:12px 0 4px;font:600 12px ui-monospace,monospace;text-align:center}.web-window small {display:block;color:#83949d;font:7px ui-monospace,monospace;text-align:center}.web-cursor {position:absolute;right:25%;bottom:21%;color:#e7f8ff;font-size:22px;text-shadow:0 0 9px var(--blue)}
+.network-art {background:radial-gradient(ellipse at center,rgba(255,189,156,.12),transparent 62%),#0c1116}.net-ring {position:absolute;border:1px solid rgba(255,189,156,.22);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}.r1 {width:74px;height:43px}.r2 {width:122px;height:68px;transform:translate(-50%,-50%) rotate(45deg)}.r3 {width:170px;height:90px;transform:translate(-50%,-50%) rotate(-34deg)}.net-dot {position:absolute;width:6px;height:6px;background:var(--peach);border-radius:50%;box-shadow:0 0 9px rgba(255,189,156,.8)}.d1 {left:24%;top:35%}.d2 {right:25%;top:27%}.d3 {right:31%;bottom:19%}.d4 {left:37%;bottom:14%;width:4px;height:4px}.net-hub {position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:34px;height:34px;border:1px solid rgba(255,189,156,.75);border-radius:50%;display:grid;place-items:center;background:#211a19;color:#ffd3bd;font:7px ui-monospace,monospace;letter-spacing:.08em}
+.data-art {background:radial-gradient(ellipse at bottom,rgba(196,185,255,.12),transparent 65%),#0c1017}.data-bars {position:absolute;bottom:17px;left:20%;right:17%;height:61px;display:flex;gap:5px;align-items:end;border-bottom:1px solid rgba(196,185,255,.3)}.data-bars i {flex:1;background:linear-gradient(to top,rgba(151,133,217,.48),rgba(196,185,255,.1));border-top:1px solid var(--lavender);border-radius:2px 2px 0 0}.data-bars i:nth-child(1){height:30%}.data-bars i:nth-child(2){height:54%}.data-bars i:nth-child(3){height:39%}.data-bars i:nth-child(4){height:68%}.data-bars i:nth-child(5){height:49%}.data-bars i:nth-child(6){height:76%}.data-bars i:nth-child(7){height:59%}.data-bars i:nth-child(8){height:94%}.data-line {position:absolute;height:1px;width:56%;top:43%;left:24%;transform:rotate(-13deg);background:rgba(236,228,255,.65)}.data-point {width:5px;height:5px;border-radius:50%;background:#e6deff;position:absolute;box-shadow:0 0 7px var(--lavender)}.dp1{left:24%;top:53%}.dp2{left:42%;top:47%}.dp3{left:58%;top:39%}.dp4{right:22%;top:31%}
+.design-art {background:radial-gradient(ellipse at center,rgba(242,211,138,.1),transparent 64%),#0e1116}.design-block {position:absolute;border:1px solid rgba(242,211,138,.55)}.b1{left:21%;top:25%;width:34px;height:34px}.b2{left:40%;top:25%;width:67px;height:18px;background:rgba(196,185,255,.14);border-color:rgba(196,185,255,.65)}.b3{left:21%;top:54%;width:54px;height:20px;background:rgba(140,204,242,.12);border-color:rgba(140,204,242,.6)}.b4{left:51%;top:52%;width:42px;height:42px;border-radius:50%;border-color:rgba(255,189,156,.72)}.b5{right:17%;top:36%;width:18px;height:43px;background:rgba(165,241,207,.13);border-color:rgba(165,241,207,.62)}.design-cross{position:absolute;right:25%;bottom:12%;color:var(--yellow);font-size:15px}.design-circle{position:absolute;left:31%;top:42%;width:6px;height:6px;border-radius:50%;background:#f2d38a;box-shadow:0 0 9px var(--yellow)}
+.food-art {background:radial-gradient(ellipse at center,rgba(235,161,116,.12),transparent 65%),#11110f}.plate {width:94px;height:94px;border-radius:50%;border:1px solid rgba(240,218,191,.7);background:radial-gradient(circle,rgba(205,120,77,.22),rgba(239,224,201,.06) 60%,rgba(236,218,192,.1) 61%,transparent 64%);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}.plate-inner {position:absolute;inset:12px;border:1px solid rgba(240,218,191,.18);border-radius:50%}.food-leaf {position:absolute;width:20px;height:9px;border-radius:100% 0 100% 0;background:#8eb17c}.leaf1{left:33px;top:35px;transform:rotate(-23deg)}.leaf2{left:45px;top:43px;transform:rotate(34deg);background:#accb86}.food-dot{position:absolute;width:6px;height:6px;border-radius:50%;background:#de9768}.fd1{left:35px;top:48px}.fd2{left:55px;top:31px;width:4px;height:4px}.fd3{left:58px;top:53px;width:5px;height:5px;background:#e8c36c}.fd4{left:29px;top:41px;width:4px;height:4px;background:#e8c36c}.food-garnish{position:absolute;color:#a9c78a;font-size:10px;left:48px;top:26px}.food-steam{position:absolute;height:18px;width:8px;top:17px;border-left:1px solid rgba(240,218,191,.36);border-radius:50%}.st1{left:47%;transform:rotate(13deg)}.st2{left:52%;top:12px;transform:rotate(-13deg)}
+
+
+/* Red and black portfolio palette */
+:root {
+  --bg: #0b0809;
+  --panel: #130e10;
+  --panel-hover: #1a1114;
+  --text: #f3edef;
+  --muted: #b5a9ad;
+  --dim: #78696e;
+  --line: rgba(218, 172, 180, .15);
+  --mint: #ff4d5a;
+  --blue: #ff737f;
+  --lavender: #e14357;
+  --peach: #ff8978;
+  --yellow: #ffc0a8;
+}
+.orbit-art, .interest-card .card-art {
+  filter: grayscale(.35) sepia(1) saturate(2.8) hue-rotate(320deg);
+}
+
+</style>
+
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="Portfolio home"><span class="wordmark-mark">N</span><span>PERSONAL PORTFOLIO</span></a>
+      <nav aria-label="Main navigation"><a href="#interests" aria-current="page">Interests</a><a href="#about">About</a></nav>
+      <span class="availability"><span class="status-dot"></span> ALWAYS CURIOUS</span>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> A SMALL MAP OF MY CURIOSITY <span class="mono">/ 01—09</span></p>
+          <h1 id="page-title">Things I like<br>to <em>figure out.</em></h1>
+          <p class="intro-text">From the tiny paths on a circuit board to the care behind a good meal, I love following details that make the world feel more understandable and a lot more interesting.</p>
+          <a class="text-link" href="#interests">Wander through <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="orbit-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+          <span class="orbit-node node-one"></span><span class="orbit-node node-two"></span><span class="orbit-node node-three"></span>
+          <div class="orbit-core"><span>KEEP<br>LOOKING</span><span class="core-cross">✳</span></div>
+          <span class="orbit-label label-top">SCALE: INFINITE</span><span class="orbit-label label-bottom">CURIOSITY / ON</span>
+        </div>
+        <div class="intro-index"><span>INTERESTS</span><span>01 / 09</span></div>
+      </section>
+
+      <section class="interests-section" id="interests" aria-labelledby="interests-title">
+        <div class="section-heading">
+          <div><p class="eyebrow"><span class="eyebrow-line"></span> A FEW OPEN TABS</p><h2 id="interests-title">Always exploring<span class="accent">.</span></h2></div>
+          <p class="section-note">The best ideas tend to cross boundaries.<br>Pick a thread and follow it.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter interests">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Everything <span>09</span></button>
+          <button class="filter-button" type="button" data-filter="science" aria-pressed="false">Science &amp; data <span>04</span></button>
+          <button class="filter-button" type="button" data-filter="hands-on" aria-pressed="false">Build &amp; hands-on <span>04</span></button>
+          <button class="filter-button" type="button" data-filter="creative" aria-pressed="false">Creative practice <span>03</span></button>
+        </div>
+
+        <div class="interest-grid" aria-live="polite">
+          <article class="interest-card card-electronics" data-tags="science hands-on" style="--delay: 0ms">
+            <div class="card-top"><span class="card-number">01 <i>/ CIRCUITS</i></span><span class="card-icon icon-circuit" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M8 14h11l5 5v10l5 5h11M8 34h9l5-5V19l5-5h13"/><circle cx="8" cy="14" r="2.5"/><circle cx="40" cy="34" r="2.5"/><circle cx="8" cy="34" r="2.5"/><circle cx="40" cy="14" r="2.5"/><rect x="19" y="19" width="10" height="10" rx="2"/></svg></span></div>
+            <div class="card-art circuit-art" aria-hidden="true"><span class="chip"></span><span class="trace trace-a"></span><span class="trace trace-b"></span><span class="trace trace-c"></span><span class="trace trace-d"></span></div>
+            <div class="card-content"><p class="card-kicker">SIGNALS, SYSTEMS & SMALL WONDERS</p><h3>Electronics</h3><p class="card-description">I love how a few components and a curious question can become something useful, surprising, or both.</p><div class="card-more"><p>From reading a schematic to tracing a stubborn signal, every board has a story hidden in its paths.</p></div><button class="note-button" type="button" aria-expanded="false">Open field note <span aria-hidden="true">↗</span></button></div>
+          </article>
+
+          <article class="interest-card card-chemistry" data-tags="science hands-on" style="--delay: 210ms">
+            <div class="card-top"><span class="card-number">02 <i>/ TRANSFORMATIONS</i></span><span class="card-icon icon-molecule" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M13 13l11 11 12-12M24 24l-8 12m8-12 13 11"/><circle cx="13" cy="13" r="4"/><circle cx="36" cy="12" r="4"/><circle cx="24" cy="24" r="5"/><circle cx="16" cy="36" r="4"/><circle cx="37" cy="35" r="4"/></svg></span></div>
+            <div class="card-art chemistry-art" aria-hidden="true"><span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span><span class="flask"><span></span></span><span class="chem-star">✳</span></div>
+            <div class="card-content"><p class="card-kicker">MATTER IN MOTION</p><h3>Chemistry</h3><p class="card-description">I’m drawn to the invisible changes happening all around us—and the experiments that let us see them unfold.</p><div class="card-more"><p>Color shifts, crystals, reactions: chemistry makes the ordinary feel like a very good magic trick.</p></div><button class="note-button" type="button" aria-expanded="false">Open field note <span aria-hidden="true">↗</span></button></div>
+          </article>
+
+          <article class="interest-card card-art-interest" data-tags="creative" style="--delay: 280ms">
+            <div class="card-top"><span class="card-number">03 <i>/ EXPRESSION</i></span><span class="card-icon icon-art" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 6C13 6 5 14 5 24s7 18 17 18h3c3 0 5-2 5-5 0-2-1-3-1-5s2-4 5-4h3c5 0 8-4 8-9C45 13 36 6 24 6z"/><circle cx="15" cy="19" r="2"/><circle cx="23" cy="14" r="2"/><circle cx="32" cy="17" r="2"/></svg></span></div>
+            <div class="card-art painting-art" aria-hidden="true"><span class="paint p-a"></span><span class="paint p-b"></span><span class="paint p-c"></span><span class="paint p-d"></span><span class="paint p-e"></span><span class="paint-mark">MAKE<br>SPACE</span></div>
+            <div class="card-content"><p class="card-kicker">A DIFFERENT WAY OF SEEING</p><h3>Art</h3><p class="card-description">A place to play, notice, and make a mark. Art keeps my technical side company without asking it to explain everything.</p><div class="card-more"><p>Sometimes the point is the process: trying a color, following a line, and seeing what happens next.</p></div><button class="note-button" type="button" aria-expanded="false">Open field note <span aria-hidden="true">↗</span></button></div>
+          </article>
+          <article class="interest-card card-ai" data-tags="science" style="--delay: 350ms">
+            <div class="card-top"><span class="card-number">04 <i>/ PATTERNS</i></span><span class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M18 9a5 5 0 0 0-5 5v2a5 5 0 0 0 0 10v3a5 5 0 0 0 5 5h12a5 5 0 0 0 5-5v-3a5 5 0 0 0 0-10v-2a5 5 0 0 0-5-5H18zM19 17h10M19 24h10M19 31h6"/></svg></span></div>
+            <div class="card-art ai-art" aria-hidden="true"><span class="ai-node n1"></span><span class="ai-node n2"></span><span class="ai-node n3"></span><span class="ai-node n4"></span><span class="ai-node n5"></span><span class="ai-node n6"></span><span class="ai-link l1"></span><span class="ai-link l2"></span><span class="ai-link l3"></span><span class="ai-link l4"></span><span class="ai-link l5"></span><span class="ai-label">LEARN → ADAPT</span></div>
+            <div class="card-content"><p class="card-kicker">LEARNING FROM EXAMPLES</p><h3>AI &amp; machine learning</h3><p class="card-description">I’m curious about how machines find patterns, learn from data, and help people solve problems in new ways.</p><div class="card-more"><p>From a model’s inner workings to the choices that shape its results, there’s always another layer to explore.</p></div><button class="note-button" type="button" aria-expanded="false">Open field note <span aria-hidden="true">↗</span></button></div>
+          </article>
+          <article class="interest-card card-web" data-tags="creative" style="--delay: 420ms">
+            <div class="card-top"><span class="card-number">05 <i>/ THE WEB</i></span><span class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="9" width="36" height="29" rx="3"/><path d="M6 16h36M17 23l-5 4 5 4m14-8 5 4-5 4m-5-10-4 12"/></svg></span></div>
+            <div class="card-art web-art" aria-hidden="true"><span class="web-window"><i></i><i></i><i></i><b>&lt;build /&gt;</b><small>ideas, made clickable</small></span><span class="web-cursor">↖</span></div>
+            <div class="card-content"><p class="card-kicker">FROM IDEA TO INTERFACE</p><h3>Web development</h3><p class="card-description">I enjoy turning ideas into experiences people can use, one thoughtful detail and working interaction at a time.</p><div class="card-more"><p>A satisfying mix of logic and creativity can make a page feel clear, useful, and alive.</p></div><button class="note-button" type="button" aria-expanded="false">Open field note <span aria-hidden="true">↗</span></button></div>
+          </article>
+          <article class="interest-card card-network" data-tags="hands-on" style="--delay: 490ms">
+            <div class="card-top"><span class="card-number">06 <i>/ CONNECTIONS</i></span><span class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="10" r="4"/><circle cx="10" cy="35" r="4"/><circle cx="38" cy="35" r="4"/><circle cx="24" cy="25" r="3"/><path d="M22 14l-9 17m13-17 9 17m-21 4h20M24 13v9"/></svg></span></div>
+            <div class="card-art network-art" aria-hidden="true"><span class="net-ring r1"></span><span class="net-ring r2"></span><span class="net-ring r3"></span><span class="net-dot d1"></span><span class="net-dot d2"></span><span class="net-dot d3"></span><span class="net-dot d4"></span><span class="net-hub">LINK</span></div>
+            <div class="card-content"><p class="card-kicker">HOW EVERYTHING CONNECTS</p><h3>Networking</h3><p class="card-description">I like learning how devices communicate, how information travels, and what keeps a connection reliable.</p><div class="card-more"><p>There’s an invisible architecture behind the simple feeling of being connected.</p></div><button class="note-button" type="button" aria-expanded="false">Open field note <span aria-hidden="true">↗</span></button></div>
+          </article>
+          <article class="interest-card card-data" data-tags="science" style="--delay: 560ms">
+            <div class="card-top"><span class="card-number">07 <i>/ EVIDENCE</i></span><span class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 39V9m0 30h33M14 32l8-9 7 4 11-14"/><circle cx="14" cy="32" r="1.5"/><circle cx="22" cy="23" r="1.5"/><circle cx="29" cy="27" r="1.5"/><circle cx="40" cy="13" r="1.5"/></svg></span></div>
+            <div class="card-art data-art" aria-hidden="true"><span class="data-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="data-line"></span><span class="data-point dp1"></span><span class="data-point dp2"></span><span class="data-point dp3"></span><span class="data-point dp4"></span></div>
+            <div class="card-content"><p class="card-kicker">SIGNALS IN THE NOISE</p><h3>Data science</h3><p class="card-description">Good questions get even more interesting when you can explore the evidence and uncover a useful pattern.</p><div class="card-more"><p>I enjoy the path from messy information to a clearer picture of what might be going on.</p></div><button class="note-button" type="button" aria-expanded="false">Open field note <span aria-hidden="true">↗</span></button></div>
+          </article>
+          <article class="interest-card card-design" data-tags="creative" style="--delay: 630ms">
+            <div class="card-top"><span class="card-number">08 <i>/ COMPOSITION</i></span><span class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10h13v13H8zM27 10h13v8H27zM27 24h13v14H27zM8 28h13v10H8z"/></svg></span></div>
+            <div class="card-art design-art" aria-hidden="true"><span class="design-block b1"></span><span class="design-block b2"></span><span class="design-block b3"></span><span class="design-block b4"></span><span class="design-block b5"></span><span class="design-cross">+</span><span class="design-circle"></span></div>
+            <div class="card-content"><p class="card-kicker">FORM, FEEL &amp; FUNCTION</p><h3>Design</h3><p class="card-description">I notice the little choices that make things intuitive and inviting, from a clear layout to a satisfying shape.</p><div class="card-more"><p>Design solves a problem while caring about how the solution feels to use.</p></div><button class="note-button" type="button" aria-expanded="false">Open field note <span aria-hidden="true">↗</span></button></div>
+          </article>
+          <article class="interest-card card-food" data-tags="hands-on" style="--delay: 700ms">
+            <div class="card-top"><span class="card-number">09 <i>/ THE KITCHEN</i></span><span class="card-icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 8v13m-5-13v8a5 5 0 0 0 10 0V8m-5 13v19m19-32c-5 4-7 10-7 16h8v16m0-32v32"/></svg></span></div>
+            <div class="card-art food-art" aria-hidden="true"><span class="plate"><span class="plate-inner"></span><span class="food-leaf leaf1"></span><span class="food-leaf leaf2"></span><span class="food-dot fd1"></span><span class="food-dot fd2"></span><span class="food-dot fd3"></span><span class="food-dot fd4"></span><span class="food-garnish">✳</span></span><span class="food-steam st1"></span><span class="food-steam st2"></span></div>
+            <div class="card-content"><p class="card-kicker">A LITTLE OF THIS, A PINCH OF THAT</p><h3>Food preparation</h3><p class="card-description">I enjoy the rhythm of preparing food, learning techniques, and making something good to share.</p><div class="card-more"><p>It’s part experiment, part craft, and part everyday way of taking care of people.</p></div><button class="note-button" type="button" aria-expanded="false">Open field note <span aria-hidden="true">↗</span></button></div>
+          </article>        </div>
+        <p class="empty-state" hidden>No notes in this orbit yet. Try another filter.</p>
+      </section>
+
+      <section class="closing" id="about"><span class="closing-mark" aria-hidden="true">✳</span><div><p class="eyebrow">MORE QUESTIONS THAN ANSWERS</p><h2>That’s the fun part.</h2></div><a href="#top" class="back-top">Back to the top <span aria-hidden="true">↑</span></a></section>
+    </main>
+    <footer><a class="wordmark footer-mark" href="#top"><span class="wordmark-mark">N</span><span>PERSONAL PORTFOLIO</span></a><span>MADE WITH CURIOSITY <span class="accent">✳</span></span><span>© <span id="year">2026</span></span></footer>
+  </div>
+  <script>
+const filterButtons = [...document.querySelectorAll(".filter-button")];
+const cards = [...document.querySelectorAll(".interest-card")];
+const emptyState = document.querySelector(".empty-state");
+
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.filter;
+    filterButtons.forEach((item) => {
+      const active = item === button;
+      item.classList.toggle("is-active", active);
+      item.setAttribute("aria-pressed", String(active));
+    });
+
+    let visibleCount = 0;
+    cards.forEach((card) => {
+      const tags = card.dataset.tags.split(" ");
+      const visible = filter === "all" || tags.includes(filter);
+      card.hidden = !visible;
+      if (visible) visibleCount += 1;
+    });
+    emptyState.hidden = visibleCount !== 0;
+  });
+});
+
+document.querySelectorAll(".note-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const card = button.closest(".interest-card");
+    const isOpen = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!isOpen));
+    button.firstChild.textContent = isOpen ? "Open field note " : "Close field note ";
+    card.classList.toggle("is-open", !isOpen);
+  });
+});
+
+document.querySelector("#year").textContent = new Date().getFullYear();
+
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+

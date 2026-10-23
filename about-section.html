@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>About — Portfolio</title>
+  <style>
+    :root {
+      --about-bg: #000;
+      --about-fg: #f5f5f5;
+      --about-muted: #666;
+      --about-arrow: #303030;
+      --about-pad-x: clamp(1.25rem, 12vw, 8rem);
+      --about-pad-y: clamp(2rem, 7vw, 6rem);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--about-bg);
+      color: var(--about-fg);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .about {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100svh;
+      overflow: hidden;
+      padding: var(--about-pad-y) var(--about-pad-x) clamp(2rem, 3.5vw, 3.5rem);
+      isolation: isolate;
+    }
+
+    .about__topline {
+      display: flex;
+      justify-content: flex-end;
+      min-height: 1.5rem;
+      margin-bottom: clamp(1.25rem, 2.4vw, 2rem);
+    }
+
+    .about__counter {
+      color: var(--about-muted);
+      font-size: clamp(.75rem, 1.3vw, 1rem);
+      font-weight: 600;
+      letter-spacing: .02em;
+      line-height: 1;
+    }
+
+    .about__title {
+      width: 100%;
+      max-width: 12ch;
+      margin: 0;
+      color: var(--about-fg);
+      font-family: "Arial Black", Arial, Helvetica, sans-serif;
+      font-size: clamp(6rem, 27vw, 19rem);
+      font-weight: 900;
+      letter-spacing: -.09em;
+      line-height: .78;
+    }
+
+    .about__title span {
+      display: block;
+    }
+
+    .about__bottom {
+      display: grid;
+      grid-template-columns: minmax(9rem, .85fr) minmax(0, 1.75fr);
+      align-items: end;
+      gap: clamp(2rem, 6vw, 5rem);
+      margin-top: auto;
+      padding-top: clamp(3.5rem, 8vh, 6rem);
+    }
+
+    .about__arrow {
+      display: block;
+      width: clamp(8.5rem, 17vw, 15rem);
+      height: auto;
+      color: var(--about-arrow);
+      overflow: visible;
+    }
+
+    .about__copy {
+      width: min(100%, 43rem);
+      padding-bottom: .1rem;
+    }
+
+    .about__bio {
+      margin: 0;
+      color: #e6e6e6;
+      font-size: clamp(.95rem, 1.42vw, 1.14rem);
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .about__work {
+      margin: clamp(1.5rem, 3.2vw, 2.35rem) 0 0;
+      color: #aaa;
+      font-size: clamp(.62rem, .82vw, .76rem);
+      font-weight: 700;
+      letter-spacing: .035em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    @media (min-width: 1200px) {
+      .about__title { font-size: min(27vw, 19rem); }
+    }
+
+    @media (max-width: 700px) {
+      :root {
+        --about-pad-x: 7vw;
+        --about-pad-y: 2.25rem;
+      }
+
+      .about { min-height: 100svh; }
+      .about__topline { margin-bottom: 2rem; }
+      .about__title {
+        font-size: clamp(5.2rem, 25vw, 11rem);
+        letter-spacing: -.09em;
+      }
+      .about__bottom {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+        padding-top: 4rem;
+      }
+      .about__arrow { width: clamp(5rem, 24vw, 8rem); }
+      .about__copy { max-width: 38rem; }
+      .about__bio { font-size: 1rem; }
+      .about__work { margin-top: 1.35rem; }
+    }
+
+    @media (max-width: 360px) {
+      .about__title { font-size: 23vw; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="about" aria-labelledby="about-title">
+      <div class="about__topline">
+        <!-- Change this counter to match your page/slide number. -->
+        <span class="about__counter">02/05</span>
+      </div>
+
+      <h1 class="about__title" id="about-title"><span>about</span><span>me.</span></h1>
+
+      <div class="about__bottom">
+        <!-- Decorative northeast arrow, drawn inline so no image asset is needed. -->
+        <svg class="about__arrow" viewBox="0 0 180 180" aria-hidden="true" focusable="false">
+          <path d="M18 18H160V160M160 18 18 160" fill="none" stroke="currentColor" stroke-width="27" stroke-linecap="square" stroke-linejoin="miter" />
+        </svg>
+
+        <div class="about__copy">
+          <!-- Replace this paragraph with your own short portfolio introduction. -->
+          <p class="about__bio">Hey, I’m Athul Varghese—a BCA student at MC Varghese College in Ettumanoor, with a curious mind and a growing list of things I want to figure out. AI and machine learning, web development, networking, data science, and design all have a way of pulling me in. When I’m not exploring how things work online, I enjoy experimenting with food preparation. Different ingredients, same idea: try something, learn as you go, and see what comes together.</p>
+
+          <!-- Replace with your current role, client, or focus. -->
+          <p class="about__work">Currently pursuing BCA at MC Varghese College, Ettumanoor</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

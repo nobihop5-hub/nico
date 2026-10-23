@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Sip | Street Food & Drinks</title>
+
+    <style>
+        :root {
+            --blue: #075b83;
+            --yellow: #ffd447;
+            --dark: #171717;
+            --white: #fffdf5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        header {
+            background: var(--blue);
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            color: var(--yellow);
+            font-size: 30px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--yellow);
+        }
+
+        .hero {
+            min-height: 560px;
+            background: var(--blue);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+            padding: 70px 8%;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1 1 300px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--dark);
+            padding: 9px 14px;
+            font-weight: bold;
+            transform: rotate(-2deg);
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(44px, 7vw, 82px);
+            line-height: 0.98;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--yellow);
+        }
+
+        .hero p {
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 480px;
+            margin-bottom: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--dark);
+            padding: 15px 24px;
+            text-decoration: none;
+            font-weight: 900;
+            border: 2px solid var(--yellow);
+            transition: 0.2s;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--yellow);
+        }
+
+        .truck {
+            flex: 1 1 280px;
+            text-align: center;
+            font-size: clamp(100px, 18vw, 190px);
+            background: rgba(255,255,255,0.08);
+            border: 3px dashed var(--yellow);
+            padding: 30px 10px;
+            border-radius: 20px;
+        }
+
+        section {
+            padding: 75px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .menu-card {
+            background: white;
+            padding: 28px;
+            border: 2px solid var(--dark);
+            box-shadow: 6px 6px 0 var(--yellow);
+            transition: transform 0.2s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-card .emoji {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .menu-card h3 {
+            font-size: 23px;
+            margin-bottom: 12px;
+            color: var(--blue);
+        }
+
+        .menu-card ul {
+            list-style: none;
+            line-height: 2;
+        }
+
+        .about {
+            background: var(--yellow);
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .about > div {
+            flex: 1 1 280px;
+        }
+
+        .about h2 {
+            font-size: clamp(34px, 5vw, 52px);
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            line-height: 1.8;
+            font-size: 17px;
+            margin-bottom: 18px;
+        }
+
+        .about-note {
+            background: var(--blue);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .about-note h3 {
+            color: var(--yellow);
+            margin-bottom: 12px;
+            font-size: 26px;
+        }
+
+        .find-us {
+            text-align: center;
+        }
+
+        .find-us p {
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 30px 8%;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        footer span {
+            color: var(--yellow);
+        }
+
+        .mobile-call {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 14px;
+            }
+
+            .hero {
+                padding: 55px 6%;
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+
+            .mobile-call {
+                display: block;
+                position: fixed;
+                bottom: 15px;
+                right: 15px;
+                z-index: 100;
+                background: var(--yellow);
+                color: var(--dark);
+                padding: 14px 20px;
+                border-radius: 30px;
+                text-decoration: none;
+                font-weight: bold;
+                box-shadow: 0 3px 12px #0004;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">HOLY SIP.</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#location">Find Us</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <span class="tag">GOOD FOOD. GOOD VIBES.</span>
+
+                <h1>GRAB A BITE.<br>TAKE A <span>SIP.</span></h1>
+
+                <p>
+                    Street-food favourites, refreshing drinks, and a little
+                    happiness served on wheels. Find your next favourite
+                    stop with Holy Sip.
+                </p>
+
+                <a class="btn" href="#menu">EXPLORE OUR MENU →</a>
+            </div>
+
+            <div class="truck" aria-label="Food truck illustration">
+                🚐
+            </div>
+        </section>
+
+        <section id="menu">
+            <div class="section-title">
+                <h2>THE HOLY MENU.</h2>
+                <p>Simple favourites. Big flavour. Made for the road.</p>
+            </div>
+
+            <div class="menu-grid">
+                <article class="menu-card">
+                    <div class="emoji">🍔</div>
+                    <h3>Burgers</h3>
+                    <ul>
+                        <li>Holy Burger</li>
+                        <li>Classic Burg</li>
+                        <li>Flame Burg</li>
+                    </ul>
+                </article>
+
+                <article class="menu-card">
+                    <div class="emoji">🌯</div>
+                    <h3>Wraps</h3>
+                    <ul>
+                        <li>Holy Wrap</li>
+                        <li>Classic Wrap</li>
+                        <li>Hot Wrap</li>
+                    </ul>
+                </article>
+
+                <article class="menu-card">
+                    <div class="emoji">🥪</div>
+                    <h3>Sandwiches</h3>
+                    <ul>
+                        <li>Holy Chicwitch</li>
+                        <li>Veg Wich</li>
+                        <li>Egg Witch</li>
+                    </ul>
+                </article>
+
+                <article class="menu-card">
+                    <div class="emoji">🍟</div>
+                    <h3>Loaded Fries</h3>
+                    <ul>
+                        <li>Holy Loaded</li>
+                        <li>Holy Classic</li>
+                        <li>Holy Flamin</li>
+                    </ul>
+                </article>
+
+                <article class="menu-card">
+                    <div class="emoji">☕</div>
+                    <h3>Holy Chai</h3>
+                    <ul>
+                        <li>Regular Holy Chai</li>
+                        <li>Holy Kattan</li>
+                        <li>Neela Chai</li>
+                        <li>Red Chai</li>
+                    </ul>
+                </article>
+
+                <article class="menu-card">
+                    <div class="emoji">🥤</div>
+                    <h3>Drinks & Snacks</h3>
+                    <ul>
+                        <li>Iced Tea & Coffee</li>
+                        <li>Pazhampori</li>
+                        <li>Parippuvada</li>
+                        <li>Bajji</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div>
+                <h2>MORE THAN JUST A FOOD TRUCK.</h2>
+
+                <p>
+                    Holy Sip brings together street food, good company,
+                    and the freedom of the open road. We believe good food
+                    should feel welcoming, affordable, and full of flavour.
+                </p>
+
+                <p>
+                    Every stop is an opportunity to serve something delicious
+                    and make someone's day a little better.
+                </p>
+
+                <a class="btn" href="#location">FIND OUR TRUCK →</a>
+            </div>
+
+            <div class="about-note">
+                <h3>A LITTLE KINDNESS GOES A LONG WAY.</h3>
+                <p>
+                    Our vision is to support people in need through food
+                    and kindness, privately and respectfully. Because
+                    everyone deserves a good meal.
+                </p>
+            </div>
+        </section>
+
+        <section class="find-us" id="location">
+            <div class="section-title">
+                <h2>WHERE'S HOLY SIP?</h2>
+                <p>Your next food stop could be just around the corner.</p>
+            </div>
+
+            <p>
+                Our food truck location will be updated here.
+                Follow along to find our next stop.
+            </p>
+
+            <!-- Replace this link with your real social-media page -->
+            <a class="btn"
+               href="https://www.instagram.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+                FOLLOW OUR JOURNEY →
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="logo">HOLY SIP.</div>
+        <p>Good food. Good vibes. Always on the move.</p>
+        <p>© <span id="year"></span> Holy Sip. All rights reserved.</p>
+    </footer>
+
+    <!-- Replace the number with your business phone number -->
+    <a class="mobile-call" href="tel:+910000000000">☎ Call Now</a>
+
+    <script>
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>

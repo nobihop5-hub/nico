@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050405">
+  <title>Contact — Athul Varghese</title>
+  <style>
+    :root {
+      --page-bg: #050405;
+      --text: #f4f1f2;
+      --muted: #a7a1a4;
+      --pink: #f20b50;
+      --circle-size: 5.1rem;
+      color-scheme: dark;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--page-bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .contact {
+      position: relative;
+      display: grid;
+      min-height: 100svh;
+      overflow: hidden;
+      place-items: start center;
+      isolation: isolate;
+      padding: clamp(10rem, 34vh, 15rem) 1.5rem 8rem;
+      background:
+        radial-gradient(ellipse 38rem 27rem at 50% 105%, rgba(111, 0, 34, .5), transparent 72%),
+        var(--page-bg);
+    }
+
+    /* Fine vertical lines and the faint burgundy glow in the reference. */
+    .contact::before {
+      position: absolute;
+      z-index: -1;
+      inset: 20% 15% 0;
+      content: "";
+      background:
+        repeating-linear-gradient(90deg, transparent 0 calc(12.5% - 1px), rgba(255, 255, 255, .035) calc(12.5% - 1px) 12.5%),
+        radial-gradient(ellipse at 50% 100%, rgba(107, 0, 33, .24), transparent 68%);
+      pointer-events: none;
+    }
+
+    .contact__content {
+      width: min(100%, 58rem);
+      text-align: center;
+    }
+
+    .contact__title {
+      margin: 0;
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.45rem, 4.1vw, 4rem);
+      font-weight: 400;
+      letter-spacing: -.055em;
+      line-height: 1.08;
+    }
+
+    .contact__intro {
+      margin: 1.35rem 0 0;
+      color: var(--muted);
+      font-size: clamp(.98rem, 1.3vw, 1.16rem);
+      letter-spacing: -.045em;
+      line-height: 1.5;
+    }
+
+    .contact__links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(.75rem, 1.55vw, 1.5rem);
+      margin-top: clamp(3rem, 9vh, 4.5rem);
+    }
+
+    .contact__placeholder {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, .08);
+      background: linear-gradient(145deg, rgba(255, 255, 255, .09), rgba(255, 255, 255, .045));
+      color: #ddd9db;
+      font-size: .82rem;
+    }
+
+    .contact__placeholder--social {
+      width: var(--circle-size);
+      aspect-ratio: 1;
+      border-radius: 50%;
+    }
+
+    .contact__placeholder--email {
+      width: clamp(15rem, 24vw, 23rem);
+      min-height: var(--circle-size);
+      border-radius: 999px;
+      font-size: 1.05rem;
+      letter-spacing: -.04em;
+    }
+
+    /* Decorative pink circle is intentionally clipped by the viewport. */
+    .contact__orb {
+      position: absolute;
+      z-index: -1;
+      bottom: -32rem;
+      left: 50%;
+      width: min(39rem, 78vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--pink);
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    @media (max-width: 700px) {
+      .contact {
+        padding: clamp(10rem, 25vh, 13rem) 1.25rem 7rem;
+      }
+
+      .contact::before { inset-inline: 5%; }
+      .contact__title { font-size: clamp(2.3rem, 9vw, 3.6rem); }
+      .contact__links {
+        display: grid;
+        grid-template-columns: repeat(4, var(--circle-size));
+        gap: .9rem;
+        width: max-content;
+        max-width: 100%;
+        margin-inline: auto;
+      }
+      .contact__placeholder--email {
+        grid-column: 1 / -1;
+        grid-row: 1;
+        width: min(100%, 23rem);
+        justify-self: center;
+      }
+      .contact__placeholder--social { grid-row: 2; }
+      .contact__orb { bottom: -24rem; width: min(30rem, 90vw); }
+    }
+
+    @media (max-width: 390px) {
+      .contact__links {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: .6rem;
+        width: 100%;
+      }
+      .contact__placeholder--social { width: 4.15rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="contact" aria-labelledby="contact-title">
+      <div class="contact__content">
+        <h1 class="contact__title" id="contact-title">Your turn. Say hello</h1>
+        <p class="contact__intro">Have an opportunity, want to collaborate on something cool, or just say hello?</p>
+
+        <div class="contact__links">
+          <span class="contact__placeholder contact__placeholder--social">Twitter</span>
+          <span class="contact__placeholder contact__placeholder--social">Instagram</span>
+          <span class="contact__placeholder contact__placeholder--email">Email me</span>
+          <span class="contact__placeholder contact__placeholder--social">Dribbble</span>
+          <span class="contact__placeholder contact__placeholder--social">LinkedIn</span>
+        </div>
+      </div>
+      <span class="contact__orb" aria-hidden="true"></span>
+    </section>
+  </main>
+</body>
+</html>
